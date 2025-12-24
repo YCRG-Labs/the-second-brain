@@ -1,0 +1,130 @@
+{
+  "description": "Known co-exclusion (competitive exclusion) pairs in human gut microbiome",
+  "version": "1.0.0",
+  "sources": [
+    "Faust, K., et al. (2012). Microbial Co-occurrence Relationships in the Human Microbiome. PLoS Computational Biology.",
+    "Arumugam, M., et al. (2011). Enterotypes of the human gut microbiome. Nature.",
+    "Wu, G.D., et al. (2011). Linking Long-Term Dietary Patterns with Gut Microbial Enterotypes. Science.",
+    "David, L.A., et al. (2014). Diet rapidly and reproducibly alters the human gut microbiome. Nature."
+  ],
+  "notes": [
+    "These pairs represent taxa that rarely co-occur at high abundance in the same sample",
+    "The Bacteroides-Prevotella exclusion is the most well-documented enterotype signature",
+    "Co-exclusion may be due to competition for similar ecological niches or dietary substrates"
+  ],
+  "pairs": [
+    {
+      "taxon_i": "Bacteroides",
+      "taxon_j": "Prevotella",
+      "source": "Arumugam et al. 2011 - Enterotype signature",
+      "confidence": "high",
+      "mechanism": "Competition for similar dietary substrates (plant polysaccharides vs animal protein)"
+    },
+    {
+      "taxon_i": "Bacteroides",
+      "taxon_j": "Ruminococcus",
+      "source": "Arumugam et al. 2011 - Enterotype signature",
+      "confidence": "medium",
+      "mechanism": "Different enterotype associations"
+    },
+    {
+      "taxon_i": "Prevotella",
+      "taxon_j": "Ruminococcus",
+      "source": "Arumugam et al. 2011 - Enterotype signature",
+      "confidence": "medium",
+      "mechanism": "Different enterotype associations"
+    },
+    {
+      "taxon_i": "Bacteroides_fragilis",
+      "taxon_j": "Prevotella_copri",
+      "source": "Wu et al. 2011",
+      "confidence": "high",
+      "mechanism": "Dietary pattern association (Western vs plant-based diet)"
+    },
+    {
+      "taxon_i": "Bacteroides_vulgatus",
+      "taxon_j": "Prevotella_copri",
+      "source": "David et al. 2014",
+      "confidence": "high",
+      "mechanism": "Rapid dietary response"
+    },
+    {
+      "taxon_i": "Clostridium_difficile",
+      "taxon_j": "Bacteroides_thetaiotaomicron",
+      "source": "Faust et al. 2012",
+      "confidence": "medium",
+      "mechanism": "Colonization resistance"
+    },
+    {
+      "taxon_i": "Escherichia_coli",
+      "taxon_j": "Bifidobacterium",
+      "source": "Faust et al. 2012",
+      "confidence": "medium",
+      "mechanism": "pH and metabolite competition"
+    },
+    {
+      "taxon_i": "Methanobrevibacter_smithii",
+      "taxon_j": "Prevotella",
+      "source": "Arumugam et al. 2011",
+      "confidence": "medium",
+      "mechanism": "Hydrogen utilization patterns"
+    },
+    {
+      "taxon_i": "Akkermansia_muciniphila",
+      "taxon_j": "Prevotella",
+      "source": "Faust et al. 2012",
+      "confidence": "low",
+      "mechanism": "Mucin degradation niche"
+    },
+    {
+      "taxon_i": "Faecalibacterium_prausnitzii",
+      "taxon_j": "Enterobacteriaceae",
+      "source": "Faust et al. 2012",
+      "confidence": "medium",
+      "mechanism": "Butyrate production and inflammation"
+    }
+  ],
+  "pairs_by_index": [
+    {
+      "index_i": 0,
+      "index_j": 1,
+      "description": "Bacteroides vs Prevotella (primary enterotype signature)"
+    },
+    {
+      "index_i": 0,
+      "index_j": 2,
+      "description": "Bacteroides vs Ruminococcus"
+    },
+    {
+      "index_i": 1,
+      "index_j": 2,
+      "description": "Prevotella vs Ruminococcus"
+    },
+    {
+      "index_i": 3,
+      "index_j": 4,
+      "description": "Bacteroides_fragilis vs Prevotella_copri"
+    },
+    {
+      "index_i": 5,
+      "index_j": 4,
+      "description": "Bacteroides_vulgatus vs Prevotella_copri"
+    }
+  ],
+  "default_taxa_mapping": {
+    "Bacteroides": 0,
+    "Prevotella": 1,
+    "Ruminococcus": 2,
+    "Bacteroides_fragilis": 3,
+    "Prevotella_copri": 4,
+    "Bacteroides_vulgatus": 5,
+    "Bacteroides_thetaiotaomicron": 6,
+    "Clostridium_difficile": 7,
+    "Escherichia_coli": 8,
+    "Bifidobacterium": 9,
+    "Methanobrevibacter_smithii": 10,
+    "Akkermansia_muciniphila": 11,
+    "Faecalibacterium_prausnitzii": 12,
+    "Enterobacteriaceae": 13
+  }
+}
