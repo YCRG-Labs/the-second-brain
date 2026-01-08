@@ -6,4 +6,4 @@ Code Associated With:
 
 <sup>1</sup> Yee Collins Research Group
 
-Preprint Available at:
+Preprint Available at: https://ycrg-labs.org/tsb.pdf
