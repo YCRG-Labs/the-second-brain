@@ -1086,6 +1086,35 @@ class HMPDataset:
         return self._processed_data
 
 
+
+
+def load_npz_dataset(npz_path: str):
+    """Load a preprocessed dataset from .npz file."""
+    import numpy as np
+    data = np.load(npz_path, allow_pickle=True)
+    compositions = data['compositions']
+    taxa_names = list(data['taxa_names'])
+    sample_ids = list(data['sample_ids'])
+    stats = MicrobiomeDatasetStats(
+        mean_sparsity=float(data['mean_sparsity']),
+        std_sparsity=0.0,
+        taxon_prevalences=data['taxon_prevalences'],
+        alpha_diversity_mean=float(data['alpha_diversity_mean']),
+        alpha_diversity_std=0.0,
+        beta_diversity_mean=float(data['beta_diversity_mean']),
+        beta_diversity_std=0.0,
+        num_samples=compositions.shape[0],
+        num_taxa=compositions.shape[1]
+    )
+    return ProcessedMicrobiomeDataset(
+        compositions=compositions,
+        counts=None,
+        sample_ids=sample_ids,
+        taxa_names=taxa_names,
+        stats=stats,
+        metadata=None
+    )
+
 def load_dataset(
     name: str,
     data_dir: Optional[str] = None,

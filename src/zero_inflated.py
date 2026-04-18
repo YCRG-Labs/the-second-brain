@@ -90,7 +90,8 @@ class ZeroInflatedDecoder(nn.Module):
         )
         
         # Initialize abundance logvar to small values for stable training
-        nn.init.constant_(self.abundance_logvar_head[-1].bias, -2.0)
+        nn.init.constant_(self.abundance_logvar_head[-1].bias, -1.0)  # Conservative variance init
+        nn.init.constant_(self.abundance_mu_head[-1].bias, -7.0)  # Init to typical log-abundance
     
     def forward(
         self, 
@@ -115,6 +116,7 @@ class ZeroInflatedDecoder(nn.Module):
         
         # Abundance head
         abundance_mu = self.abundance_mu_head(features)
+        abundance_mu = torch.clamp(abundance_mu, min=-10.0, max=10.0)
         abundance_logvar = self.abundance_logvar_head(features)
         
         # Clamp logvar for numerical stability
