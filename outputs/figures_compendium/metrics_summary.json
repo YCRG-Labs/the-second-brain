@@ -1,0 +1,42 @@
+{
+  "compendium_metrics": {
+    "ours": {
+      "mfd": 0.0478,
+      "alpha": 2.0016,
+      "sparsity": 0.9373,
+      "prev_corr": 0.7841
+    },
+    "vae": {
+      "mfd": 0.0004,
+      "alpha": 3.6649,
+      "sparsity": 0.0,
+      "prev_corr": 0.0
+    },
+    "gan": {
+      "mfd": 0.0009,
+      "alpha": 2.0996,
+      "sparsity": 0.0,
+      "prev_corr": -0.2006
+    },
+    "copula": {
+      "mfd": 0.0049,
+      "alpha": 1.4084,
+      "sparsity": 0.0041,
+      "prev_corr": 0.0459
+    },
+    "dirichlet": {
+      "mfd": 0.0464,
+      "alpha": 0.5991,
+      "sparsity": 0.4745,
+      "prev_corr": 0.0415
+    },
+    "real": {
+      "mfd": 0.0,
+      "alpha": 1.9566,
+      "sparsity": 0.8972,
+      "prev_corr": 1.0
+    }
+  },
+  "real_sparsity": 0.8972,
+  "real_alpha": 1.9566
+}

@@ -66,6 +66,7 @@ def main():
         loader = DataLoader(TensorDataset(train_tensor), batch_size=args.batch_size, shuffle=True)
         losses = []
         real_mean = torch.tensor(train_data.mean(0), dtype=torch.float32, device=device)
+        best_loss = float("inf")
         for epoch in range(args.epochs):
             model.train()
             epoch_loss = 0
@@ -91,6 +92,10 @@ def main():
             scheduler.step()
             avg = epoch_loss / len(loader)
             losses.append(avg)
+            # Save best model based on loss
+            if avg < best_loss:
+                best_loss = avg
+                torch.save(model.state_dict(), output_dir / "best_model.pt")
             if (epoch+1) % 10 == 0:
                 lr = scheduler.get_last_lr()[0]
                 print("Epoch", epoch+1, "/", args.epochs, "Loss:", round(avg,4), "LR:", round(lr,6))
